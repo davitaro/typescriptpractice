@@ -1,7 +1,4 @@
 "use strict";
-//union types
-//literal types
-//alias in conjuction with union types
 const combine = (input1, input2, resultConversion) => {
     let result;
     if ((typeof input1 === "number" && typeof input2 === "number") ||

@@ -1,17 +1,4 @@
 "use strict";
-// const person : {
-//     name: string;
-//     age: number;
-//     hobbies: string[];
-//     favoriteActivities: string[];
-//     role: [number, string]
-// }= {
-//   name: "Davita",
-//   age: 29,
-//   hobbies: ["sports", "cooking"],
-//   favoriteActivities: ["bowling"],
-//   role: [2, "admin"],
-// };
 var Role;
 (function (Role) {
     Role[Role["ADMIN"] = 0] = "ADMIN";
@@ -25,7 +12,6 @@ const person = {
     favoriteActivities: ["bowling"],
     role: Role.ADMIN,
 };
-// wierdly allowed: person.role.push("super-admin");
 let favoriteActivities;
 favoriteActivities = ["making coffee", "reading in bed"];
 person.favoriteActivities = favoriteActivities;
