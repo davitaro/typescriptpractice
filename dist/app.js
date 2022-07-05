@@ -1,55 +1,27 @@
 "use strict";
-const merge = (objA, objB) => {
-    return Object.assign(objA, objB);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const mergedObj = merge({ name1: "Davita" }, { name2: "Joe" });
-console.log(mergedObj.name1);
-const countAndPrint = (element) => {
-    let descriptionText = "Got no value";
-    if (element.length > 0) {
-        descriptionText = `I've got ${element.length} elements`;
-    }
-    return [element, descriptionText];
+const Logger = (logString) => {
+    return function (constructor) {
+        console.log("Logging...");
+        console.log("log string: ", logString);
+        console.log(constructor);
+    };
 };
-const myResult = countAndPrint("standard hello");
-const myOtherResult = countAndPrint([1, 2, 3, 4, 5]);
-console.log("my Result", myResult);
-console.log("my other result", myOtherResult);
-const extractAndConvert = (obj, key) => {
-    return obj[key];
+let Persson = class Persson {
+    constructor(name) {
+        this.name = "Max";
+        this.name = name;
+        console.log("Creating person object...");
+        console.log(`A new persson called ${this.name} has been created.`);
+    }
 };
-console.log(extractAndConvert({ name: "Shloimy", age: 75 }, "age"));
-class DataStorage {
-    constructor() {
-        this.data = [];
-    }
-    addItem(item) {
-        this.data.push(item);
-    }
-    removeItem(item) {
-        if (this.data.indexOf(item) === -1) {
-            return;
-        }
-        this.data.splice(this.data.indexOf(item), 1);
-    }
-    getItems() {
-        return [...this.data];
-    }
-}
-const textStorage = new DataStorage();
-textStorage.addItem("report 1");
-console.log(textStorage.getItems());
-const objectStorage = new DataStorage();
-objectStorage.addItem({ name: "John", age: 30 });
-objectStorage.addItem({ name: "Marco", age: 55 });
-console.log(objectStorage.getItems());
-const createCourseGoal = (title, description, date) => {
-    const courseGoal = {};
-    courseGoal.title = title;
-    courseGoal.description = description;
-    courseGoal.completeUntil = new Date();
-    return courseGoal;
-};
-console.log(createCourseGoal("TypeScript", "understand typescript basics", new Date()));
-const names = ['Max', "Anna"];
-names.push("manu");
+Persson = __decorate([
+    Logger("I'm logging but I'm a little confused...")
+], Persson);
+const newPerson = new Persson("Shprintzy");
+console.log(newPerson);

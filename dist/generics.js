@@ -52,4 +52,3 @@ const createCourseGoal = (title, description, date) => {
 };
 console.log(createCourseGoal("TypeScript", "understand typescript basics", new Date()));
 const names = ['Max', "Anna"];
-names.push("manu");
